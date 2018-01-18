@@ -1,4 +1,4 @@
-/*   
+/*
  * Template Name: Developer - Responsive Website Template for Developers
  * Version: 1.5
  * Author: Xiaoying Riley
@@ -543,3 +543,42 @@ iframe {
     width: 1360px;
   }
 }
+
+/* formspree contact form */
+#contactForm {
+  display: none;
+  border: 6px solid #778492;
+  padding: 2em;
+  width: 400px;
+  text-align: center;
+  background: #fff;
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%)
+
+}
+
+input, textarea {
+  margin: .8em auto;
+  font-family: inherit;
+  text-transform: inherit;
+  font-size: inherit;
+
+  display: block;
+  width: 280px;
+  padding: .4em;
+}
+textarea { height: 80px; resize: none; }
+
+.formBtn {
+  width: 140px;
+  display: inline-block;
+  background: #54ba4e;
+  color: #fff;
+  font-size: 1.2em;
+  border-radius: 4px;
+}
+
+/* end formspree contact form */

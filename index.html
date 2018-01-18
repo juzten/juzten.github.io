@@ -50,7 +50,7 @@
                     <li class="last-item"><a href="http://blog.juzten.com" target="_blank"><i class="fa fa-rss"></i></a></li>
                 </ul>
             </div><!--//profile-->
-            <a class="btn btn-cta-primary pull-right" href="mailto:juzten@gmail.com?Subject=Web%20Developer" target="_blank"><i class="fa fa-paper-plane"></i> Contact Me</a>
+            <div id="contact" class="btn btn-cta-primary pull-right"><i class="fa fa-paper-plane"></i> Contact Me</div>
         </div><!--//container-->
     </header><!--//header-->
 
@@ -322,6 +322,20 @@
     <script type="text/javascript" src="assets/plugins/github-activity/src/github-activity.js"></script>
     <!-- custom js -->
     <script type="text/javascript" src="assets/js/main.js"></script>
+
+    <div id="contactForm">
+      <h1>Keep in touch!</h1>
+      <small>I'll get back to you as quickly as possible</small>
+      <form action="https://formspree.io/juzten+portfolio@gmail.com" method="POST">
+        <input placeholder="Name" type="text" required name="name"/>
+        <input placeholder="Email" type="email" required name="_replyto"/>
+        <textarea placeholder="Comment" name="comment"></textarea>
+        <input class="formBtn" type="submit" />
+        <input type="hidden" name="_next" value="http://www.juzten.com" />
+        <input type="hidden" name="_subject" value="New portfolio submission!" />
+        <input type="text" name="_gotcha" style="display:none" />
+      </form>
+    </div>
 </body>
 </html>
 
