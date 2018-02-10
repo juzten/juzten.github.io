@@ -5,6 +5,9 @@ var browserSync = require('browser-sync').create();
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
+var cssnano = require('gulp-cssnano');
+var gulpIf = require('gulp-if');
+
 
 gulp.task('hello', function() {
   console.log('Hello Zell');
@@ -20,6 +23,20 @@ gulp.task('scripts', function() {
         .pipe(rename('scripts.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest(jsDest));
+});
+
+// gulp.task('styles', function(){
+//   return gulp.src('app/*.html')
+//     // Minifies only if it's a CSS file
+//     .pipe(gulpIf('assets/css/*.css', cssnano()))
+//     .pipe(gulp.dest('dist'))
+// });
+
+gulp.task('styles', function() {
+    return gulp.src('assets/css/*.css')
+        .pipe(rename('styles.min.js'))
+        .pipe(cssnano())
+        .pipe(gulp.dest('assets/css'));
 });
 
 // gulp.task('less', function () {
