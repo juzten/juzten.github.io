@@ -34,7 +34,7 @@ gulp.task('scripts', function() {
 
 gulp.task('styles', function() {
     return gulp.src('assets/css/*.css')
-        .pipe(rename('styles.min.js'))
+        .pipe(rename('styles.min.css'))
         .pipe(cssnano())
         .pipe(gulp.dest('assets/css'));
 });
