@@ -54,3 +54,8 @@ gulp.task('images', function(){
   .pipe(cache(imagemin()))
   .pipe(gulp.dest('dist/images'))
 });
+
+
+gulp.task('build', [`styles`, `images`, `scripts`], function (){
+  console.log('Building files');
+})
