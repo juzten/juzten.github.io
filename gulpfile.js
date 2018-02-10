@@ -7,7 +7,8 @@ var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 var cssnano = require('gulp-cssnano');
 var gulpIf = require('gulp-if');
-
+var imagemin = require('gulp-imagemin');
+var cache = require('gulp-cache');
 
 gulp.task('hello', function() {
   console.log('Hello Zell');
@@ -46,3 +47,10 @@ gulp.task('styles', function() {
 //     }))
 //     .pipe(gulp.dest('app/assets/css/styles.csss'));
 // });
+
+
+gulp.task('images', function(){
+  return gulp.src('assets/images/**/*.+(png|jpg|gif|svg)')
+  .pipe(cache(imagemin()))
+  .pipe(gulp.dest('dist/images'))
+});
