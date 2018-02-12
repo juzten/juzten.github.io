@@ -19,8 +19,8 @@ var jsFiles = 'assets/js/*.js',
 
 gulp.task('scripts', function() {
     return gulp.src(jsFiles)
-        // .pipe(concat('main.js'))
-        // .pipe(gulp.dest(jsDest))
+        .pipe(concat('main.js'))
+        .pipe(gulp.dest(jsDest))
         .pipe(rename('scripts.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest(jsDest));
