@@ -59,3 +59,18 @@ gulp.task('images', function(){
 gulp.task('build', [`styles`, `images`, `scripts`], function (){
   console.log('Building files');
 })
+
+gulp.task('browserSync', function() {
+  browserSync.init({
+    server: {
+      baseDir: "./"
+    }
+  });
+});
+
+// Dev task
+gulp.task('dev', ['browserSync'], function() {
+  // gulp.watch('./scss/*.scss', ['css']);
+  // gulp.watch('./js/*.js', ['js']);
+  gulp.watch('./*.html', browserSync.reload);
+});
