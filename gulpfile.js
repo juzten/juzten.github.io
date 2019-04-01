@@ -14,7 +14,7 @@ gulp.task('hello', function() {
   console.log('Hello Zell');
 });
 
-var jsFiles = 'assets/js/*.js',
+var jsFiles = 'assets/js/main.js',
     jsDest = 'assets/js';
 
 gulp.task('scripts', function() {
@@ -34,7 +34,7 @@ gulp.task('scripts', function() {
 // });
 
 gulp.task('styles', function() {
-    return gulp.src('assets/css/*.css')
+    return gulp.src('assets/css/styles.css')
         .pipe(rename('styles.min.css'))
         .pipe(cssnano())
         .pipe(gulp.dest('assets/css'));
@@ -52,13 +52,13 @@ gulp.task('styles', function() {
 gulp.task('images', function(){
   return gulp.src('assets/images/**/*.+(png|jpg|gif|svg)')
   .pipe(cache(imagemin()))
-  .pipe(gulp.dest('dist/images'))
+  .pipe(gulp.dest('dist/images'));
 });
 
 
 gulp.task('build', [`styles`, `images`, `scripts`], function (){
   console.log('Building files');
-})
+});
 
 gulp.task('browserSync', function() {
   browserSync.init({
